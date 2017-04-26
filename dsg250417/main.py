@@ -3,25 +3,7 @@ import json
 import datetime
 
 from models import *
-
-def date_handler(obj):
-    if hasattr(obj, 'isoformat'):
-        return obj.isoformat()
-    elif hasattr(obj, 'email'):
-        return obj.email()
-
-    return obj
-
-
-def data2json(data):
-    return json.dumps(
-        data,
-        default=date_handler,
-        indent=2,
-        separators=(',', ': '),
-        ensure_ascii=False
-    )
-
+from utils import *
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
