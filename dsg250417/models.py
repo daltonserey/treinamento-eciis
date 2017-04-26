@@ -1,6 +1,6 @@
 from google.appengine.ext import ndb
 
-class Todo(ndb.Model):
+class ToDo(ndb.Model):
     title = ndb.StringProperty(required=True)
     author = ndb.StringProperty()
     text = ndb.TextProperty()
