@@ -5,7 +5,7 @@ import datetime
 from models import *
 from utils import *
 
-class MainHandler(webapp2.RequestHandler):
+class ToDosHandler(webapp2.RequestHandler):
     def get(self):
             query = Todo.query()
             data = [todo.to_dict() for todo in query]
@@ -27,5 +27,5 @@ class MainHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/api/todo', MainHandler),
+    ('/api/todo', ToDosHandler),
 ], debug=True)
